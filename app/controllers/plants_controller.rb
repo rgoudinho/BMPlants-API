@@ -16,7 +16,6 @@ class PlantsController < ApplicationController
   # POST /plants
   def create
     @plant = Plant.new(plant_params)
-
     if @plant.save
       render json: @plant, status: :created, location: @plant
     else
@@ -44,7 +43,7 @@ class PlantsController < ApplicationController
       @plant = Plant.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Only allow a list of trusted prameters through.
     def plant_params
       params.require(:plant).permit(:name, :scientific_name, :description)
     end

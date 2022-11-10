@@ -39,5 +39,8 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 #
 # preload_app!
 
+# plugin :ngrok_tunnel if ENV.fetch('RAILS_ENV') { 'development' } == 'development'
+
+
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart

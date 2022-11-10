@@ -53,6 +53,11 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  # ngrok
+  # config.hosts << "17f5-2804-f74-41d4-a00-9ca7-59f4-3f8e-3134.sa.ngrok.io"
+
+  #localtunnel
+  config.hosts << "bmplants.loca.lt"
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
