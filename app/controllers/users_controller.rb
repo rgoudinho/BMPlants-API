@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     end
   end
 
+  # POST /users/log-in
+  def autentification
+    if User.find_by(user_name: params[:user_name], password: user_params[:password])
+      render json: true
+    else
+      render json: false
+    end
+  end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
@@ -37,6 +46,8 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
